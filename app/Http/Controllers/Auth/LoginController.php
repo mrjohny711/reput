@@ -25,7 +25,22 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+//    protected $redirectTo = '/home';
+    public function redirectTo()
+    {
+        flash("Login Efectuado Com Sucesso!!")->success()->important();
+        return '/home';
+    }
+
+    public function index()
+    {
+        return redirect('/login');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
 
     /**
      * Create a new controller instance.
